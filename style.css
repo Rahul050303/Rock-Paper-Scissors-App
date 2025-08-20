@@ -1,63 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #121212; 
-    color: white;
-    font-family: 'Press Start 2P', cursive; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
+  background-color: #121212;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
 }
 
 .heading h1 {
-    font-size: 2.5rem; 
-    margin-bottom: 50px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .play {
-    display: flex;
-    gap: 30px; 
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
-button {
-    background-color: transparent;
-    border: 4px solid white;
-    border-radius: 50%; 
-    width: 120px;
-    height: 120px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hand {
+  background-color: transparent;
+  border: 4px solid white;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button img {
-    width: 60px;
-    height: 60px; 
+  width: 60px;
+  height: 60px;
 }
 
-button:hover {
-    transform: scale(1.1); 
-    transform: rotate(180rad);
+.hand:hover {
+  transform: scale(1.1) rotate(-90deg);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.scoreBoard {
+  margin: 20px;
+}
+
+.scores {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #ffcc00;
+}
+
+.resetButton {
+  border: 4px solid white;
+  width: 160px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  margin: auto;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.resetButton:hover {
+  background-color: white;
+  color: #121212;
 }
 
 @media (max-width: 600px) {
-    .heading h1 {
-        font-size: 1.8rem;
-    }
-    .play {
-        flex-direction: column; 
-    }
+  .heading h1 {
+    font-size: 1.8rem;
+  }
+  .play {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .scoreBoard{
+    font-size: 0.8rem;
+  }
 }
