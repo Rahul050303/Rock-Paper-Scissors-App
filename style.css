@@ -84,6 +84,10 @@ button img {
   color: #121212;
 }
 
+.js-result{
+  margin: 5px;
+}
+
 @media (max-width: 600px) {
   .heading h1 {
     font-size: 1.8rem;
