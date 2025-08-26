@@ -1,41 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
+    <nav>
+        <button class="menu-button js-main-menu-button">
+            ☰
+        </button>
+    </nav>
+
     <section class="heading">
         <h1>Rock Paper Scissors</h1>
     </section>
+
+    <!-- Player Choice -->
     <section class="play">
-        <button class="hand" onclick="play('rock')">
+        <button class="hand js-rock">
             <img src="https://nehalhazem.github.io/rockPaperScissors.io/img/rock.png" alt="">
         </button>
-        
-        <button class="hand" onclick="play('paper')">
+
+        <button class="hand js-paper">
             <img src="https://sihoonathan.github.io/rock-paper-scissors/assets/img/paper.png" alt="">
         </button>
-        
-        <button class="hand" onclick="play('scissors')">
+
+        <button class="hand js-scissors">
             <img src="https://rock-paper-scissors-lilac-alpha.vercel.app/static/media/scissors.png" alt="">
         </button>
     </section>
+
+    <!-- Score and Game result -->
     <section class="scoreBoard">
         <p class="js-result"></p>
         <h2 class="scores" id="scoreDisplay">Wins : 0 , Losses : 0 , Ties : 0</h2>
-        <button class="resetButton" onclick="resetScore()">Reset Score</button>
-        <button class="js-auto-play autoPlayButton" onclick="
-            autoPlay();
-            autoPlayButton();
-        ">Auto Play</button>
+        <button class="resetButton js-reset-button">Reset Score</button>
+        <button class="js-auto-play autoPlayButton">Auto Play</button>
     </section>
+
+    <!-- Reset Conformation -->
+    <div class="overlay js-overlay">
+        <section class="popup-window">
+            <p>Are you sure you want to reset score?</p>
+            <button class="yes-button js-yes">Yes</button>
+            <button class="no-button js-no">No</button>
+        </section>
+    </div>
+
+    <!-- Main Menu -->
+    <div class="js-menu-overlay menu-overlay">
+        <section class="popup-menu">
+            <button class="history-button js-history-button">GAME HISTORY</button>
+            <button class="controls-button js-controls-button">CONTROLS</button>
+            <button class="settings-button js-settings-button">SETTINGS</button>
+            <button class="about-button js-about-button">ABOUT</button>
+        </section>
+    </div>
+
+    <!-- Game History -->
+    <div class="history-overlay js-history-overlay">
+        <section class="popup-history">
+            <h2>Game History</h2>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Result</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody class="js-history-list">
+                    <!-- Example Row -->
+                    <!-- <tr><td>Win</td><td>12:35 PM</td></tr> -->
+                </tbody>
+            </table>
+            <button class="close-history js-close-history">Close</button>
+        </section>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls-overlay js-controls-overlay">
+        <section class="popup-controls">
+            <h2>Game Controls</h2>
+            <ul>
+                <li><strong>Rock</strong> ➝ Press <kbd>R</kbd> or click the 🪨 button</li>
+                <li><strong>Paper</strong> ➝ Press <kbd>P</kbd> or click the 📄 button</li>
+                <li><strong>Scissors</strong> ➝ Press <kbd>S</kbd> or click the ✂️ button</li>
+                <li><strong>Reset Score</strong> ➝ Press <kbd>Backspace</kbd> or click the "Reset Score" button</li>
+                <li><strong>Auto Play</strong> ➝ Press <kbd>A</kbd> or click the "Auto Play" button</li>
+                <li><strong>Open Menu</strong> ➝ Click ☰ (top-right)</li>
+                <li><strong>Close Popup</strong> ➝ Press <kbd>Esc</kbd> or click outside</li>
+            </ul>
+            <button class="close-controls js-close-controls">Close</button>
+        </section>
+    </div>
+
+    <!-- Settings -->
+    <div class="settings-overlay js-settings-overlay">
+        <section class="popup-settings">
+            <h2>Settings</h2>
+            <div class="setting-option">
+                <label>
+                    <input type="checkbox" class="js-sound-toggle">
+                    Enable Sound Effects 🔊
+                </label>
+            </div>
+            <div class="setting-option">
+                <label>
+                    <input type="checkbox" class="js-dark-mode-toggle">
+                    Dark Mode 🌙
+                </label>
+            </div>
+            <div class="setting-option">
+                <label>
+                    <input type="checkbox" class="js-confirm-toggle" checked>
+                    Confirm before Reset ⚠️
+                </label>
+            </div>
+            <button class="close-settings js-close-settings">Close</button>
+        </section>
+    </div>
+
+    <!-- About -->
+    <div class="js-about-overlay about-overlay">
+        <section class="popup-about">
+            <h2>About This Game 🎮</h2>
+            <p>
+                Rock Paper Scissors is a classic hand game brought to life with <strong>HTML, CSS, and
+                    JavaScript</strong>.
+                This version features:
+            </p>
+            <ul>
+                <li>📊 Persistent score tracking using <code>localStorage</code></li>
+                <li>⚡ Keyboard shortcuts for faster gameplay</li>
+                <li>🖼️ Popup windows for controls, settings, and history</li>
+                <li>🎨 A clean and responsive design</li>
+            </ul>
+            <p>
+                Explore the code for this project.
+                👉 Check the GitHub repository <a href="#">here</a>.
+            </p>
+            <p><em>Developed by Rahul Chauhan</em></p>
+            <button class="close-about js-close-about">Close</button>
+        </section>
+    </div>
+
     <footer>
         <p>Made By | Rahul Chauhan</p>
     </footer>
-    <script src="script.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
+
 </html>

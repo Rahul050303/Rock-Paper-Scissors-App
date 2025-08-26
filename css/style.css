@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.heading h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.play {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.hand {
+    background-color: transparent;
+    border: 4px solid white;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button img {
+    width: 60px;
+    height: 60px;
+}
+
+.hand:hover {
+    transform: scale(1.1) rotate(-90deg);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.scoreBoard {
+    margin: 20px;
+}
+
+.scores {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #ffcc00;
+}
+
+.resetButton,
+.autoPlayButton {
+    border: 4px solid white;
+    width: 160px;
+    height: 60px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    margin: auto;
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.resetButton:hover {
+    background-color: white;
+    color: #121212;
+}
+
+.autoPlayButton:hover {
+    background-color: white;
+    color: #121212;
+}
+
+.js-result {
+    margin: 5px;
+}
+
+.popup-window {
+    border: 2px solid white;
+    padding: 20px;
+    margin: 20px;
+    position: fixed;
+    justify-content: center;
+    background-color: white;
+    color: #121212;
+}
+
+.yes-button,
+.no-button {
+    border: 4px solid black;
+    width: 160px;
+    height: 60px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    margin: 20px;
+    font-size: 0.9rem;
+}
+
+.yes-button:hover,
+.no-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.overlay,
+.menu-overlay,
+.about-overlay,
+.controls-overlay,
+.history-overlay,
+.settings-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.popup-window{
+    border: 2px solid white;
+    padding: 20px;
+    background-color: white;
+    color: #121212;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 300px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-menu{
+    border: 4px solid black;
+    padding: 20px;
+    background-color: #ffcc00;
+    color: #121212;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 600px;
+    animation: fadeIn 0.3s ease-in-out;
+    backdrop-filter: blur(5px);
+    margin: 10px;
+}
+
+.history-button,
+.controls-button,
+.settings-button,
+.about-button{
+    border: 4px solid black;
+    margin: 10px;
+    padding: 10px;
+    background-color: transparent;
+    width: 300px;
+    height: 60px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.history-button:hover,
+.controls-button:hover,
+.settings-button:hover,
+.about-button:hover{
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+nav{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1100px;
+}
+
+.menu-button {
+    color: #ffcc00;
+    text-decoration: none;
+    padding: 15px;
+    background-color: transparent;
+    border: 4px solid #ffcc00;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.menu-button:hover {
+    background-color: #ffcc00;
+    color: #121212;
+}
+
+@media (max-width: 600px) {
+    .heading h1 {
+        font-size: 1.8rem;
+    }
+
+    .play {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .scoreBoard {
+        font-size: 0.8rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
