@@ -13,7 +13,7 @@ export function showResult(result, computerMove, playerMove) {
         scissors: "https://rock-paper-scissors-lilac-alpha.vercel.app/static/media/scissors.png"
     };
 
-    resultElement.innerHTML = `
+    const resultHTML = `
       <p style="margin: 15px; font-size: 18px;">
         You <strong>${result.toUpperCase()}!</strong>
       </p>
@@ -25,6 +25,9 @@ export function showResult(result, computerMove, playerMove) {
         Computer choice
       </p>
     `;
+    resultElement.innerHTML = resultHTML;
+    return resultHTML;
+
 }
 
 export function toggleAutoPlayButton() {

@@ -2,6 +2,7 @@
 import { play, resetScore, getScore, pickComputerMove } from './gameLogic.js';
 import { updateScoreBoard, toggleAutoPlayButton } from './ui.js';
 import { loadScore } from './localStorage.js';
+import { loadHistory, clearHistory } from './history.js';
 
 let isAutoPlaying = false;
 let intervalId;
@@ -51,36 +52,63 @@ overlayMenu.addEventListener('click', (e) => {
     if(e.target === overlayMenu) overlayMenu.style.display = 'none';
 });
 
+// About 
 document.querySelector('.js-about-button').addEventListener('click', () => {
     overlayAbout.style.display = 'flex';
-})
-
-overlayMenu.addEventListener('click', (e) => {
-    if(e.target === overlayAbout) overlayAbout.style.display = 'none';
 });
 
+document.querySelector('.js-close-about').addEventListener('click', () => {
+    overlayAbout.style.display = 'none';
+});
+
+overlayAbout.addEventListener('click', (e) => {
+    if (e.target === overlayAbout) overlayAbout.style.display = 'none';
+});
+
+// Controls
 document.querySelector('.js-controls-button').addEventListener('click', () => {
     overlayControls.style.display = 'flex';
-})
-
-overlayMenu.addEventListener('click', (e) => {
-    if(e.target === overlayControls) overlayControls.style.display = 'none';
 });
 
+document.querySelector('.js-close-controls').addEventListener('click', () => {
+    overlayControls.style.display = 'none';
+});
+
+overlayControls.addEventListener('click', (e) => {
+    if (e.target === overlayControls) overlayControls.style.display = 'none';
+});
+
+// History 
 document.querySelector('.js-history-button').addEventListener('click', () => {
+    loadHistory();
     overlayHistory.style.display = 'flex';
+});
+
+document.querySelector('.js-close-history').addEventListener('click', () => {
+    overlayHistory.style.display = 'none';
+});
+
+document.querySelector('.js-clear-history').addEventListener('click', () => {
+    clearHistory();
 })
 
-overlayMenu.addEventListener('click', (e) => {
-    if(e.target === overlayHistory) overlayHistory.style.display = 'none';
+overlayHistory.addEventListener('click', (e) => {
+    if (e.target === overlayHistory) overlayHistory.style.display = 'none';
 });
+
+// Settings 
 document.querySelector('.js-settings-button').addEventListener('click', () => {
     overlaySettings.style.display = 'flex';
-})
-
-overlayMenu.addEventListener('click', (e) => {
-    if(e.target === overlaySettings) overlaySettings.style.display = 'none';
 });
+
+document.querySelector('.js-close-settings').addEventListener('click', () => {
+    overlaySettings.style.display = 'none';
+});
+
+overlaySettings.addEventListener('click', (e) => {
+    if (e.target === overlaySettings) overlaySettings.style.display = 'none';
+});
+
 
 // Keyboard shortcuts
 document.body.addEventListener('keydown', (event) => {

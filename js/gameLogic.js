@@ -1,6 +1,7 @@
 // gameLogic.js
 import { saveScore } from './localStorage.js';
 import { updateScoreBoard, showResult } from './ui.js';
+import { saveHistory } from './history.js';
 
 let score = { wins: 0, losses: 0, ties: 0 };
 
@@ -33,10 +34,12 @@ export function play(playerMove) {
     if (result === 'win') score.wins++;
     else if (result === 'lose') score.losses++;
     else score.ties++;
-
+    
     saveScore(score);
     updateScoreBoard(score);
-    showResult(result, computerMove, playerMove);
+    
+    showResult(result, computerMove, playerMove); 
+    saveHistory(showResult(result, computerMove, playerMove));
 }
 
 export function resetScore() {
